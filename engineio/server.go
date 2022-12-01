@@ -156,9 +156,9 @@ func (s *Server) newSession(_ context.Context, conn transport.Conn, reqTransport
 	}
 
 	go func(newSession *session.Session) {
-		var l = logger.GetLogger("engineio.server")
+		var ll = logger.GetLogger("engineio.server")
 		if err = newSession.InitSession(); err != nil {
-			l.Error(err, "init new session:")
+			ll.Error(err, "init new session:")
 
 			return
 		}
